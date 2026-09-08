@@ -1,0 +1,22 @@
+Options -Indexes
+
+#prevent file extension, perhatikan extension html
+<FilesMatch ".*.(phps|pl|py|pyc|pyo|jsp|asp|htm|shtml|phtml|sh|cgi|zip)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+#prevent zip
+<FilesMatch ".*.(zip)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /e-info
+RewriteRule ^e-info/index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /e-info/index.html [L]
+</IfModule>
