@@ -28,6 +28,9 @@ jobs:
           port: 22
           script: |
             cd /home/umkacid/public_html
+            git config --global credential.helper store
+            git remote set-url origin https://github.com/MuriaKudusUniverse/e-info.git
+            git config --global url."https://buangyulianto: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@github.com".insteadOf "https://github.com"
             git pull origin main
             mv .htaccess-orig .htaccess
             chown -R umkacid:umkacid ./e-info
