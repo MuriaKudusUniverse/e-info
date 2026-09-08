@@ -27,6 +27,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            mkdir /home/umkacid/public_html/e-info
             cd /home/umkacid/public_html/e-info
             git config --global credential.helper store
             git remote set-url origin https://github.com/MuriaKudusUniverse/e-info.git
