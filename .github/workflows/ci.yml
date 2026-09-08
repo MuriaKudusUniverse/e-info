@@ -25,6 +25,7 @@ jobs:
           script: |
             cd /home/umkacid/public_html
             git pull origin main
+            mv .htaccess-orig .htaccess
             chown -R umkacid:umkacid ./e-info
             
       - name: Run a text script
