@@ -15,9 +15,9 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v4
 
-      #- name: Configure Git to use Personal Access Token
-        #run: |
-          #git config --global url."https://${{ secrets.PAT_BUANG }}@github.com/".insteadOf "https://github.com/"
+      - name: Configure Git to use Personal Access Token
+        run: |
+          git config --global url."https://${{ secrets.PAT_BUANG_REV1 }}@github.com/".insteadOf "https://github.com/"
 
       - name: Execute Remote SSH Commands
         uses: appleboy/ssh-action@v1.0.3
